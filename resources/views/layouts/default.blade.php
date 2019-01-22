@@ -43,9 +43,11 @@ body{font-family: 'Raleway', sans-serif;
         </div>
         <div class="footer">    
             <span class="white-text">
-                &copy; MEPCO 2017
+                &copy; MEPCO 2019
             </span>
-           
+            <span class="white-text right">
+            For queries Mail:queriesfiesta19@gmail.com
+            </span> 
         </div>
     </body>
     <script>

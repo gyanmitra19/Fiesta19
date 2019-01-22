@@ -216,8 +216,6 @@ class AdminPagesController extends Controller
         $user->full_name = $inputs['full_name'];
         $user->email = $inputs['email'];
         $user->gender = $inputs['gender'];
-        $user->college_id = $inputs['college_id'];
-        $user->mobile = $inputs['mobile'];
         $user->update();
         Session::flash('success', 'The user was updated!');
         return redirect()->route('admin::registrations.edit', $user_id);

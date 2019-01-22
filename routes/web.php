@@ -42,7 +42,7 @@ Route::group(['middleware' => 'auth.redirect_admin'], function(){
         // Route for event confirmation
         Route::get('confirm', ['as' => 'pages.confirm', 'uses' => 'PagesController@confirm'])->middleware('registrations.confirm:no');
         // Route for ticket generation
-        Route::group(['middleware' => 'registrations.confirm:yes'], function(){
+        Route::group(['middleware' => 'registrations.confirm:no'], function(){
             Route::get('download-ticket', ['as' => 'pages.ticket.download', 'uses' => 'PagesController@downloadTicket']);
             Route::post('upload-ticket', ['as' => 'pages.ticket.upload', 'uses' => 'PagesController@uploadTicketImage']);
         });  
