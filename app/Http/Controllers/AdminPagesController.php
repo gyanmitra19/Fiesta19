@@ -214,8 +214,12 @@ class AdminPagesController extends Controller
         $user = User::findOrFail($user_id);
         $inputs = Request::all();
         $user->full_name = $inputs['full_name'];
+        $user->roll_no = $inputs['roll_no'];
         $user->email = $inputs['email'];
         $user->gender = $inputs['gender'];
+        $user->department_id=$inputs['department_id'];
+        $user->section_id=$inputs['section_id'];
+        $user->year_id=$inputs['year_id'];
         $user->update();
         Session::flash('success', 'The user was updated!');
         return redirect()->route('admin::registrations.edit', $user_id);

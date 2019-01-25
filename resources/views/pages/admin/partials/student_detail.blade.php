@@ -10,6 +10,14 @@
                 <tr>
                     <th>Name</th>
                     <td>{{ $user->full_name }}</td>
+                </tr> 
+                <tr>
+                    <th>Roll_No</th>
+                    <td>{{ $user->roll_no }}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>{{ $user->gender }}</td>
                 </tr>
                 <tr>
                     <th>Department</th>
