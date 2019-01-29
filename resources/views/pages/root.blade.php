@@ -6,17 +6,19 @@
     <ul class="slides" style="background: #d35400"> 
         <li>
             <img src="#">
-            <div class="caption center-align">
+            <div class="caption center-align col-12">
                 <h1>Fiesta 19</h1>
                 <h3>MEPCO Schlenk Engineering College (Autonomous)</h3>
                 <p class="flow-text"><i class="fa fa-calendar"></i> 2 Feb 2019</p>
                 <p class="flow-text">For queries contact Dr. T. Prabaharan, Sr. Professor, Mechanical Engineering.</p>
-                <p class="flow-text">Mail:queriesfiesta19@gmail.com</p>                
+                <p class="flow-text">Mail:queriesfiesta19@gmail.com</p>
+                <p class="flow-text white-text">Registration Has been Extendend till 30/01/2019</p>            
             </div>
         </li>
     </ul>
-    <div class="center-align slider-fixed-item">  
-        {{ link_to_route('auth.register', 'Register', null, ['class' => 'waves-effect waves-light btn green']) }}
+    <div class="row center-align slider-fixed-item">  
+        <br><br><br>
+        {{ link_to_route('auth.register', 'Register', null, ['class' => 'waves-effect center waves-light btn green']) }}
     </div> 
 </div>
     
