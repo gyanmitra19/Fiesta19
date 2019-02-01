@@ -77,8 +77,10 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'auth'], function(){
 
 // Routes for administrators
 Route::group(['prefix' => 'admin', 'as' => 'admin::', 'middleware' => ['auth','auth.admin:']], function(){
+    Route::get('registrations/original_users', ['as' => 'original_users', 'uses' => 'AdminPagesController@original_users']);
     Route::group(['middleware' => 'auth.admin:root'], function(){
         // Open, Close registration
+       
         Route::get('registrations/open', ['as' => 'registrations.open', 'uses' => 'AdminPagesController@openRegistrations']);
         Route::get('registrations/close', ['as' => 'registrations.close', 'uses' => 'AdminPagesController@closeRegistrations']);
         // Enable or disable offline registration forms
@@ -94,7 +96,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin::', 'middleware' => ['auth','a
        Route::post('vote_result', ['as' => 'vote_result', 'uses' => 'AdminPagesController@vote_result']);
        Route::get('vote_result', ['as' => 'vote_result', 'uses' => 'AdminPagesController@vote_result']);      
        Route::post('votes', ['as' => 'votes', 'uses' => 'AdminPagesController@votes']);
-       Route::get('votes', ['as' => 'votes', 'uses' => 'AdminPagesController@votes']);      
+       Route::get('votes', ['as' => 'votes', 'uses' => 'AdminPagesController@votes']);
+       Route::get('original_users', ['as' => 'original_users', 'uses' => 'AdminPagesController@original_users']);      
        
        Route::post('requests', 'AdminPagesController@replyRequest');    
 

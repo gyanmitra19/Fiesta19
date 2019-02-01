@@ -21,7 +21,9 @@ use App\Department;
 use App\Section;
 use App\Year;
 use App\Vote;
+use App\new_user;
 use Excel;
+use DB;
 
 class AdminPagesController extends Controller
 {
@@ -452,5 +454,12 @@ class AdminPagesController extends Controller
         $votes=Vote::all();
         $votes=$votes->groupBy('photo_id');
         return view('pages.admin.vote_result')->with('votes',$votes);
+    }
+    function original_users(){
+        $search = Input::get('search', '');
+        $search = $search . '%';
+        $result=DB::select('select * from new_users where roll_no LIKE :search', ['search' => $search]);
+        //$result_count=$result->count();
+        return view('pages.admin.original_users')->with('users',$result);//->with('users_count',$result_count);
     }
 }
