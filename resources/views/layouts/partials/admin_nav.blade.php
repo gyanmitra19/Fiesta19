@@ -103,7 +103,7 @@
                 @if(Auth::user()->hasRole('root') || Auth::user()->hasRole('registration') )
                 <li class="collection-item">
                         <li>
-                            <a href="{{ route('admin::original_users') }}"><i class="fa fa-2x fa-tasks"></i>ORIGINAL</a>
+                            <a href="{{ route('admin::original_users') }}"><i class="fa fa-2x fa-users"></i>ORIGINAL USERS</a>
                         </li>   
                 </li>
                 @endif

@@ -459,6 +459,8 @@ class AdminPagesController extends Controller
         $search = Input::get('search', '');
         $search = $search . '%';
         $result=DB::select('select * from new_users where roll_no LIKE :search', ['search' => $search]);
+        if(!$result)
+            $result=DB::select('select * from new_users where full_name LIKE :search', ['search' => $search]);
         //$result_count=$result->count();
         return view('pages.admin.original_users')->with('users',$result);//->with('users_count',$result_count);
     }
